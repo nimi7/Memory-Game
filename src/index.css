@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.Home{
+    background: linear-gradient(-45deg, #85aaf8, #68a1ec, #39c3f5, #3855f7);
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+   
+	text-align: center;
+
+	
+
+	
+	
+  
+	
+	text-shadow: #A3A3A3 -5px -8px 13px;
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
