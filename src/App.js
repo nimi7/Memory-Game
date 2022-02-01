@@ -87,11 +87,11 @@ function App() {
     setDisabled(false)
   }
 
-
+  
 
 
   return (
-    <div className='Home h-screen '>
+    <div className='Home h-screen w-auto '>
       <div className=' '>
 
 
