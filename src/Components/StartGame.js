@@ -6,9 +6,9 @@ import Aos from 'aos';
 
 export default function StartGame(props) {
     const { ShuffelCardes } = props;
-useEffect(()=>{
-    Aos.init()
-})
+// useEffect(()=>{
+//     Aos.init()
+// })
 
     return (
         <div className='static h-screen ' >

@@ -19,6 +19,7 @@ function App() {
   })
   // take all the card on shuffele them
   const ShuffelCardes = () => {
+    setDisabled(false)
     console.log('game start')
     SetStartGame(true)
     const shuffelCardes = [...Picture, ...Picture]
@@ -29,9 +30,9 @@ function App() {
     SetCards(shuffelCardes)
     Setturns(0);
   }
-  const ShuffelCardesReset = () => {
-    console.log('New Game')
-
+  const ResetShuffelCardes = () => {
+    console.log('game start')
+    setDisabled(false)
     const shuffelCardes = [...Picture, ...Picture]
       .sort(() => Math.random() - 0.5)
       .map((card) => ({ ...card, id: Math.random() }))
@@ -39,9 +40,12 @@ function App() {
     SetchoiceTow(null)
     SetCards(shuffelCardes)
     Setturns(0);
-
   }
 
+  const TryRest = () =>{
+    SetStartGame(false)
+    ShuffelCardes()
+  }
   // check if there is first choose or seacond
   const handleChoice = (card) => {
     console.log(card)
@@ -97,10 +101,10 @@ function App() {
           data-aos-offset="500"
           data-aos-easing="ease-in-sine">
 
-          
+
           <div className=' text-xl mb-5 font-serif '>turns : {turns}
 
-            <button onClick={ShuffelCardesReset} className='float-right hover:scale-105'>
+            <button onClick={TryRest} className='float-right hover:scale-105'>
               <span className='flex font-serif'>restart</span>
               <Icon className='float-right' icon="bx:bx-power-off" color="crimson" width="32" height="32" ></Icon>
 
@@ -117,7 +121,7 @@ function App() {
 
             {Cards.map((picture) => {
               return <SingleCard
-                
+
                 picture={picture}
                 handleChoice={handleChoice}
                 flipped={picture === choiceOne || picture === choiceTow || picture.matched}

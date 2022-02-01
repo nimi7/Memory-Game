@@ -6,9 +6,7 @@ import './SingleCard.css'
 export default function SingleCard(props) {
     const { picture, handleChoice, flipped, disabled } = props;
 
-    useEffect(()=>{
-        Aos.init();
-    })
+
     const handleClick = () => {
         if (!disabled) {
             handleChoice(picture)
