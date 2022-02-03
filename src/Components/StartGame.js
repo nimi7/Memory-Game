@@ -6,13 +6,11 @@ import Aos from 'aos';
 
 export default function StartGame(props) {
     const { ShuffelCardes } = props;
-    const [fade,Setfade] =useState('');
-
+    const [fade, Setfade] = useState('');
 
     return (
         <div className='static h-screen ' >
-            
-                    
+      
             <div className='p-10 md:p-20 grid justify-items-center h-full opacity-60 bg-accent-dark bg-cover' style={{ backgroundImage: "url('https://wallpaperaccess.com/full/2825704.gif')" }}>
 
                 <div data-aos-delay="1000" data-aos="fade-right" className=' text-6xl h-24 line-height-none mb-10  md:text-8xl h-36 line-height-none mb-10'>Memory <span data-aos-delay="2000" data-aos="fade-left">Game</span>  </div>

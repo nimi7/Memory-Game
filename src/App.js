@@ -31,7 +31,7 @@ function App() {
     Setturns(0);
   }
   const ResetShuffelCardes = () => {
-    console.log('game start')
+    console.log('Start New game')
     setDisabled(false)
     const shuffelCardes = [...Picture, ...Picture]
       .sort(() => Math.random() - 0.5)
@@ -42,13 +42,13 @@ function App() {
     Setturns(0);
   }
 
-  const TryRest = () =>{
+  const TryRest = () => {
     SetStartGame(false)
     ShuffelCardes()
   }
   // check if there is first choose or seacond
   const handleChoice = (card) => {
-    console.log(card)
+   
     //True                   false
     choiceOne ? SetchoiceTow(card) : SetchoiceOne(card)
   }
@@ -69,6 +69,8 @@ function App() {
             }
           })
         })
+
+
         console.log('We have a match');
         resrTurn();
       } else {
@@ -76,6 +78,7 @@ function App() {
         setTimeout(() => resrTurn(), 1000);
       }
     }
+
   }, [choiceOne, choiceTow])
 
 
@@ -87,22 +90,20 @@ function App() {
     setDisabled(false)
   }
 
-  
-
 
   return (
     <div className='Home h-screen w-auto '>
-      <div className=' '>
+      <div className=''>
 
 
         {StartGame ? <div
-          className='px-14 md:px-80 py-auto'
+          className='float-right md:px-80 sm:float-none  md:object-none object-center py-auto'
           data-aos="fade-right"
           data-aos-offset="500"
           data-aos-easing="ease-in-sine">
 
 
-          <div className=' text-xl mb-5 font-serif '>turns : {turns}
+          <div className='text-xl mb-5 font-serif '>turns : {turns}
 
             <button onClick={TryRest} className='float-right hover:scale-105'>
               <span className='flex font-serif'>restart</span>
@@ -117,7 +118,7 @@ function App() {
 
 
 
-          <div id='StartGame' className='grid grid-cols-5 gap-y-4 md:gap-y-3    justify-items-center  text-center '>
+          <div id='StartGame' className='grid grid-cols-5 gap-y-4 md:grid grid-cols-5 gap-y-5 md:gap-y-3 justify-items-center  text-center '>
 
             {Cards.map((picture) => {
               return <SingleCard

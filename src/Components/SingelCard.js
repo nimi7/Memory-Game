@@ -17,7 +17,7 @@ export default function SingleCard(props) {
     }
 
     return (
-        <div data-aos-delay="500" data-aos={picture.anime} className='card ml-2 md:ml-none' key={picture.id}>
+        <div data-aos-delay="500" data-aos={picture.anime} className='card ml-1 md:ml-4 md:ml-none' key={picture.id}>
             <div className={flipped ? "flipped " : ""}>
                 <img className="front    " src={picture.pic} alt='card front' />
                 <img
